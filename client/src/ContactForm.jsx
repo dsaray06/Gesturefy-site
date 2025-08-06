@@ -55,6 +55,7 @@ function ContactForm() {
               style={styles.input}
             />
           </div>
+
           <div style={styles.column}>
             <label style={styles.label}>Email *</label>
             <input
@@ -76,7 +77,7 @@ function ContactForm() {
             required
             value={formData.subject}
             onChange={handleChange}
-            style={styles.input}
+            style={styles.inputsubject}
           />
         </div>
 
@@ -107,11 +108,11 @@ const styles = {
   container: {
     maxWidth: '700px',
     margin: '3rem auto',
-    padding: '2rem',
+    padding: '3rem',
     backgroundColor: '#2c2c2c', // slightly lighter than page background
     borderRadius: '8px',
     boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
-    fontFamily: 'Arial, sans-serif',
+    fontFamily: 'Montserrat',
     color: '#ffffff'
   },
   header: {
@@ -133,7 +134,7 @@ const styles = {
   },
   row: {
     display: 'flex',
-    gap: '1rem',
+    gap: '1.2rem',
     flexWrap: 'wrap'
   },
   column: {
@@ -146,14 +147,21 @@ const styles = {
     fontWeight: 'bold'
   },
   input: {
-    width: '100%',
+    width: '92.5%',
+    padding: '0.75rem',
+    fontSize: '1rem',
+    border: '1px solid #ccc',
+    borderRadius: '5px'
+  },
+  inputsubject: {
+    width: '96.5%',
     padding: '0.75rem',
     fontSize: '1rem',
     border: '1px solid #ccc',
     borderRadius: '5px'
   },
   textarea: {
-    width: '100%',
+    width: '96.5%',
     padding: '0.75rem',
     fontSize: '1rem',
     border: '1px solid #ccc',
