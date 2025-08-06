@@ -1,25 +1,39 @@
-import { Link, Routes, Route } from 'react-router-dom';
 import React from 'react';
-import Home from './pages/Home'
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Navbar from './components/navbar';
+import Footer from './components/Footer';
+import Home from './pages/Home';
 import Contact from './pages/Contact';
 
 function App() {
   return (
-    <div className="min-h-screen bg-white text-[#212121] flex flex-col">
-      <nav className="fixed top-0 w-full bg-[#121212] text-white flex justify-end items-center px-12 py-5 shadow-md z-50 space-x-10">
-        <Link to="/" className="hover:text-green-400 transition text-lg">Home</Link>
-        <Link to="/contact" className="hover:text-green-400 transition text-lg">Contact</Link>
-      </nav>
-
-      {/* Content container */}
-      <main className="flex-grow pt-[80px] flex justify-center items-center">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/contact" element={<Contact />} />
-        </Routes>
-      </main>
+    <div style={styles.app}>
+      <Router>
+        <Navbar />
+        <div style={styles.content}>
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/contact" element={<Contact />} />
+          </Routes>
+        </div>
+        <Footer />
+      </Router>
     </div>
   );
 }
+
+const styles = {
+  app: {
+    display: 'flex',
+    flexDirection: 'column',
+    minHeight: '100vh',
+    backgroundColor: '#212121',
+    color: '#fff'
+  },
+  content: {
+    flex: 1,
+    paddingBottom: '2rem'
+  }
+};
 
 export default App;

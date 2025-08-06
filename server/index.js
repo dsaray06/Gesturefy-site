@@ -11,8 +11,8 @@ app.use(cors());
 app.use(bodyParser.json());
 
 app.post('/api/contact', async (req, res) => {
-  const { name, email, message } = req.body;
-  if (!name || !email || !message) {
+  const { name, email, subject, message } = req.body;
+  if (!name || !email || !subject || !message) {
     return res.status(400).json({ error: 'All fields required' });
   }
 
@@ -28,8 +28,8 @@ app.post('/api/contact', async (req, res) => {
     await transporter.sendMail({
       from: email,
       to: process.env.EMAIL_USER,
-      subject: `Gesturefy Contact - ${name}`,
-      text: message,
+      subject: subject,
+      text: `From: ${name} <${email}>\n\n${message}`,
     });
 
     res.json({ success: true });
