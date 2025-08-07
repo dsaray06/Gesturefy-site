@@ -37,60 +37,63 @@ export default function Footer() {
 
 const styles = {
   footer: {
-    backgroundColor: '#1a1a1a',
-    color: '#ccc',
+    backgroundColor: '#121212',            // darker background for better depth
+    color: '#b3b3b3',                      // soft gray text for readability
     paddingTop: '2rem',
-    borderTop: '1px solid #333',
-    fontFamily: 'sans-serif'
+    fontFamily: "'Montserrat', sans-serif",
+    userSelect: 'none',
   },
   container: {
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
-    padding: '0 2rem'
+    padding: '0 2rem',
+    maxWidth: '1100px',
+    margin: '0 auto',
   },
   column: {
     flex: '1',
     minWidth: '250px',
-    marginBottom: '1.5rem'
+    marginBottom: '1.5rem',
+    lineHeight: '1.6',
   },
   heading: {
-    fontSize: '1.1rem',
-    color: '#1DB954',
-    marginBottom: '0.8rem'
+    fontSize: '1.2rem',
+    color: '#1DB954',                     // Spotify green accent
+    marginBottom: '0.8rem',
+    fontWeight: '700',
+    letterSpacing: '0.05em',
   },
   text: {
-    fontSize: '0.9rem',
-    lineHeight: '1.5'
+    fontSize: '0.95rem',
+    lineHeight: '1.5',
+    color: '#ccc',
   },
   list: {
     listStyleType: 'none',
     padding: 0,
-    margin: 0
+    margin: 0,
   },
   link: {
     display: 'block',
-    color: '#ccc',
+    color: '#aaa',
     textDecoration: 'none',
-    marginBottom: '0.5rem'
-  },
-  socials: {
-    marginTop: '0.5rem',
-    fontSize: '1.2rem'
-  },
-  socialIcon: {
-    marginRight: '0.5rem',
-    cursor: 'pointer'
+    marginBottom: '0.6rem',
+    fontWeight: '500',
+    transition: 'color 0.3s ease',
   },
   bottomBar: {
-    borderTop: '1px solid #333',
-    marginTop: '1rem',
+    borderTop: '1px solid #222',
+    marginTop: '1.5rem',
     padding: '1rem 2rem',
-    textAlign: 'center'
+    textAlign: 'center',
+    backgroundColor: '#0f0f0f',
   },
   bottomText: {
     margin: 0,
     fontSize: '0.85rem',
-    color: '#777'
-  }
+    color: '#666',
+    fontWeight: '400',
+    letterSpacing: '0.03em',
+  },
 };

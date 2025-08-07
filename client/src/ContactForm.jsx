@@ -36,7 +36,26 @@ function ContactForm() {
   return (
     <div style={styles.container}>
       <div style={styles.header}>
-        <h1 style={styles.title}>Contact Us</h1>
+        <h1 style={{ 
+          fontSize: '2rem', 
+          marginBottom: '30px', 
+          position: 'relative', 
+          display: 'inline-block',
+          color: 'white',
+        }}>
+          Contact Us
+          <span style={{
+            position: 'absolute',
+            left: 0,
+            bottom: -6,
+            height: '2px',            // slimmer height
+            width: '100%',
+            borderRadius: '2px',
+            background: 'linear-gradient(90deg, #0a2a07, #14833b, #0a2a07)',  // darker green gradient
+            boxShadow: '0 0 6px 2px rgba(20, 131, 59, 0.4)',                // softer, darker glow
+            filter: 'brightness(0.85)', // slightly dimmer
+          }} />
+        </h1>
         <p style={styles.subtitle}>
           Have questions about Gesturefy? We'd love to hear from you!
         </p>
@@ -55,7 +74,9 @@ function ContactForm() {
               style={styles.input}
             />
           </div>
+        </div>
 
+        <div style={styles.row}>
           <div style={styles.column}>
             <label style={styles.label}>Email *</label>
             <input
@@ -94,7 +115,20 @@ function ContactForm() {
           />
         </div>
 
-        <button type="submit" style={styles.button}>
+        <button
+          type="submit"
+          style={styles.button}
+          onMouseEnter={e => {
+            e.currentTarget.style.boxShadow = '0 0 15px #1db954';
+            e.currentTarget.style.transform = 'translateY(-5px)';
+            e.currentTarget.style.transition = 'all 0.3s ease';
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.boxShadow = 'none';
+            e.currentTarget.style.transform = 'translateY(0)';
+            e.currentTarget.style.transition = 'all 0.3s ease';
+          }}
+        >
           Send Message
         </button>
 
@@ -106,81 +140,94 @@ function ContactForm() {
 
 const styles = {
   container: {
-    maxWidth: '700px',
-    margin: '3rem auto',
-    padding: '3rem',
-    backgroundColor: '#2c2c2c', // slightly lighter than page background
-    borderRadius: '8px',
-    boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)',
     fontFamily: 'Montserrat',
-    color: '#ffffff'
+    color: '#ffffff',
+    //background: 'linear-gradient(135deg, #1a1a1a 0%, #1f5032 100%)'
+
   },
   header: {
     textAlign: 'center',
-    marginBottom: '2rem'
+    marginBottom: '2rem',
   },
   title: {
-    fontSize: '2.5rem',
-    marginBottom: '0.5rem'
+    fontSize: '2.2rem',
+    marginBottom: '0.5rem',
+    color: 'white',
   },
   subtitle: {
-    fontSize: '1.1rem',
-    color: '#666'
+    fontSize: '1rem',
+    color: '#888',
   },
   form: {
     display: 'flex',
     flexDirection: 'column',
-    gap: '1.5rem'
+    gap: '1.5rem',
   },
   row: {
     display: 'flex',
-    gap: '1.2rem',
-    flexWrap: 'wrap'
+    gap: '1.5rem',
+    flexWrap: 'wrap',
   },
   column: {
     flex: '1',
-    minWidth: '250px'
+    minWidth: '250px',
   },
   label: {
     display: 'block',
     marginBottom: '0.5rem',
-    fontWeight: 'bold'
+    fontWeight: '500',
   },
   input: {
-    width: '92.5%',
-    padding: '0.75rem',
+    width: '95%',
+    padding: '0.75rem 1rem',
     fontSize: '1rem',
-    border: '1px solid #ccc',
-    borderRadius: '5px'
+    backgroundColor: '#0c0c0c',
+    color: '#fff',
+    border: '1px solid rgba(255, 255, 255, 0.15)',
+    borderRadius: '6px',
+    outline: 'none',
+    transition: 'border 0.3s, box-shadow 0.3s',
   },
   inputsubject: {
-    width: '96.5%',
-    padding: '0.75rem',
+    width: '95%',
+    padding: '0.75rem 1rem',
     fontSize: '1rem',
-    border: '1px solid #ccc',
-    borderRadius: '5px'
+    backgroundColor: '#0c0c0c',
+    color: '#fff',
+    border: '1px solid rgba(255, 255, 255, 0.15)',
+    borderRadius: '6px',
+    outline: 'none',
+    transition: 'border 0.3s, box-shadow 0.3s',
   },
   textarea: {
-    width: '96.5%',
-    padding: '0.75rem',
+    width: '95%',
+    padding: '0.75rem 1rem',
     fontSize: '1rem',
-    border: '1px solid #ccc',
-    borderRadius: '5px',
-    resize: 'vertical'
+    backgroundColor: '#0c0c0c',
+    color: '#fff',
+    border: '1px solid rgba(255, 255, 255, 0.15)',
+    borderRadius: '6px',
+    resize: 'vertical',
+    outline: 'none',
+    transition: 'border 0.3s, box-shadow 0.3s',
   },
   button: {
     padding: '0.75rem',
     fontSize: '1rem',
-    backgroundColor: '#1DB954', // Spotify green
+    background: 'linear-gradient(145deg, #000000, #0a0a0a, #121212)',
     color: '#fff',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer'
+    border: '1px solid rgba(255, 255, 255, 0.2)',
+    borderRadius: '6px',
+    cursor: 'pointer',
+    transition: 'all 0.3s ease',
   },
   status: {
     marginTop: '1rem',
-    fontWeight: 'bold'
-  }
+    fontWeight: 'bold',
+    color: '#1db954',
+  },
 };
+
+
 
 export default ContactForm;
