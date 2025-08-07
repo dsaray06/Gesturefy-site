@@ -12,8 +12,22 @@ export default function Navbar() {
       </div>
 
       <div style={rightStyle}>
-        <Link to="/" style={linkStyle}>Home</Link>
-        <Link to="/contact" style={linkStyle}>Contact</Link>
+        <Link
+          to="/"
+          style={linkStyle}
+          onMouseEnter={e => (e.currentTarget.style.color = '#14833b')}
+          onMouseLeave={e => (e.currentTarget.style.color = '#fff')}
+        >
+          Home
+        </Link>
+        <Link
+          to="/contact"
+          style={linkStyle}
+          onMouseEnter={e => (e.currentTarget.style.color = '#14833b')}
+          onMouseLeave={e => (e.currentTarget.style.color = '#fff')}
+        >
+          Contact
+        </Link>
       </div>
     </nav>
   );
@@ -24,7 +38,11 @@ const navStyle = {
   justifyContent: 'space-between',
   alignItems: 'center',
   padding: '1rem 2rem',
-  backgroundColor: '#3a3a3a',
+  background: 'linear-gradient(135deg, #0a0a0a, #1f1f1f)',
+  boxShadow: '0 2px 8px rgba(29, 185, 84, 0.4)', // subtle green shadow
+  position: 'sticky',
+  top: 0,
+  zIndex: 1000,
 };
 
 const leftStyle = {
@@ -36,7 +54,7 @@ const logoLinkStyle = {
   display: 'flex',
   alignItems: 'center',
   textDecoration: 'none',
-  color: 'white'
+  color: 'white',
 };
 
 const logoStyle = {
@@ -57,11 +75,11 @@ const rightStyle = {
 
 const linkStyle = {
   textDecoration: 'none',
-  color: '#ffffff',
+  color: '#fff',
   fontWeight: 'bold',
   fontSize: '1rem',
   padding: '0.25rem 0.5rem',
   borderRadius: '4px',
-  transition: 'background 0.2s ease',
-  cursor: 'pointer'
+  transition: 'color 0.3s ease',
+  cursor: 'pointer',
 };
