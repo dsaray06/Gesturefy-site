@@ -141,7 +141,7 @@ function ContactForm() {
 const styles = {
   container: {
     fontFamily: 'Montserrat',
-    color: '#ffffff',
+    color: 'white',
     //background: 'linear-gradient(135deg, #1a1a1a 0%, #1f5032 100%)'
 
   },
@@ -156,7 +156,7 @@ const styles = {
   },
   subtitle: {
     fontSize: '1rem',
-    color: '#888',
+    color: '#bbb',
   },
   form: {
     display: 'flex',

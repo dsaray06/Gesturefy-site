@@ -29,7 +29,7 @@ const styles = {
     display: 'flex',
     flexDirection: 'column',
     minHeight: '100vh',
-    backgroundColor: '#212121',
+    backgroundColor: '#000000',
     color: '#fff'
   },
   content: {

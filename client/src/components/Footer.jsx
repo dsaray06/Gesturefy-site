@@ -1,4 +1,33 @@
-import React from 'react';
+import React, { useState } from 'react';
+
+function HoverLink({ href, children }) {
+  const [hover, setHover] = useState(false);
+
+  const baseStyle = {
+    display: 'inline',
+    color: '#ccc',
+    textDecoration: 'none',
+    marginBottom: '0.6rem',
+    fontFamily: 'Montserrat',
+    fontWeight: '500',
+    transition: 'color 0.3s ease',
+  };
+
+  const hoverStyle = {
+    color: '#aaaa'
+  };
+
+  return (
+    <a
+      href={href}
+      style={hover ? { ...baseStyle, ...hoverStyle } : baseStyle}
+      onMouseEnter={() => setHover(true)}
+      onMouseLeave={() => setHover(false)}
+    >
+      {children}
+    </a>
+  );
+}
 
 export default function Footer() {
   return (
@@ -7,18 +36,32 @@ export default function Footer() {
         <div style={styles.column}>
           <h4 style={styles.heading}>Gesturefy</h4>
           <p style={styles.text}>
-            Control Spotify with your hand. Intuitive, responsive, and futuristic — Gesturefy is redefining music interaction.
+            Technology should adapt to you, effortlessly and intuitively. 
+            Our innovative app lets you control Spotify with simple hand gestures, making music control more 
+            natural and convenient. Whether you’re working, cooking, or just relaxing, Gesturefy lets you skip, 
+            play, or pause songs with just a wave of your hand, no need to touch your device. 
+            Join us in transforming how you interact with your music, one gesture at a time!
           </p>
         </div>
 
         <div style={styles.column}>
           <h4 style={styles.heading}>Quick Links</h4>
           <ul style={styles.list}>
-            <li><a href="/" style={styles.link}>Home</a></li>
-            <li><a href="/contact" style={styles.link}>Contact</a></li>
-            <li><a href="#features" style={styles.link}>Features</a></li>
-            <li><a href="#download" style={styles.link}>Download</a></li>
+            <li><HoverLink href="/">Home</HoverLink></li>
+            <li><HoverLink href="/contact">Contact</HoverLink></li>
+            <li><HoverLink href="/#features">Features</HoverLink></li>
+            <li><HoverLink href="/#download">Download</HoverLink></li>
           </ul>
+        </div>
+
+        <div style={styles.column}>
+            <h4 style={styles.heading}>About Us</h4>
+            <p style={styles.text}>
+                We’re college students who love music and tech, and we created Gesturefy to improve our music experience. 
+                Frustrated with having to interupt our workflow every time we wanted to skip a song, we decided to build an app that uses simple hand gestures to control playback 
+                seamlessly, allowing us to still be able to control Spotify without breaking our concentration. Gesturefy is our way of combining passion and creativity to bring a smarter, 
+                more natural way to enjoy your music — no more interruptions, just good vibes.
+            </p>
         </div>
 
         <div style={styles.column}>
@@ -37,29 +80,28 @@ export default function Footer() {
 
 const styles = {
   footer: {
-    backgroundColor: '#121212',            // darker background for better depth
-    color: '#b3b3b3',                      // soft gray text for readability
-    paddingTop: '2rem',
-    fontFamily: "'Montserrat', sans-serif",
+    backgroundColor: '#000000',
+    color: '#b3b3b3',
+    fontFamily: "Montserrat",
     userSelect: 'none',
   },
   container: {
     display: 'flex',
     justifyContent: 'space-around',
     flexWrap: 'wrap',
-    padding: '0 2rem',
+    padding: '0rem',
     maxWidth: '1100px',
     margin: '0 auto',
   },
   column: {
     flex: '1',
     minWidth: '250px',
-    marginBottom: '1.5rem',
+    margin: '0.5rem',
     lineHeight: '1.6',
   },
   heading: {
     fontSize: '1.2rem',
-    color: '#1DB954',                     // Spotify green accent
+    color: '#1DB954',
     marginBottom: '0.8rem',
     fontWeight: '700',
     letterSpacing: '0.05em',
@@ -74,20 +116,12 @@ const styles = {
     padding: 0,
     margin: 0,
   },
-  link: {
-    display: 'block',
-    color: '#aaa',
-    textDecoration: 'none',
-    marginBottom: '0.6rem',
-    fontWeight: '500',
-    transition: 'color 0.3s ease',
-  },
   bottomBar: {
     borderTop: '1px solid #222',
     marginTop: '1.5rem',
     padding: '1rem 2rem',
     textAlign: 'center',
-    backgroundColor: '#0f0f0f',
+    backgroundColor: '#000000',
   },
   bottomText: {
     margin: 0,

@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 
 function Home() {
   const features = [
@@ -11,6 +12,18 @@ function Home() {
     { name: 'Peace Sign', action: 'Stop Gesture Detection', image: 'https://via.placeholder.com/100' },
   ];
 
+  useEffect(() => {
+    if (window.location.hash) {
+      const id = window.location.hash.replace('#', '');
+      const el = document.getElementById(id);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth' });
+        }, 100); // delay to ensure DOM is ready
+      }
+    }
+  }, []);
+  
   return (
     <div style={{ width: '100%' }}>
       <style>{`
@@ -99,12 +112,57 @@ function Home() {
         </p>
       </section>
 
-      {/* Download Section */}
+      {/* About the App Section */}
       <section
+        id="about-app"
         style={{
           padding: '60px 20px',
           textAlign: 'center',
-          background: 'linear-gradient(135deg, #050505, #0a0f0a, #0d140d)',
+          background: 'linear-gradient(135deg, #0d040d, #08110a, #191919, #0a0f0a, #050505)',
+          
+          color: 'white',
+        }}
+      >
+        <h2
+          style={{
+            fontSize: '2rem',
+            marginBottom: '30px',
+            position: 'relative',
+            display: 'inline-block',
+            color: 'white',
+          }}
+        >
+          About the App
+          <span
+            style={{
+              position: 'absolute',
+              left: 0,
+              bottom: -6,
+              height: '2px',
+              width: '100%',
+              borderRadius: '2px',
+              background: 'linear-gradient(90deg, #0a2a07, #14833b, #0a2a07)',
+              boxShadow: '0 0 6px 2px rgba(20, 131, 59, 0.4)',
+              filter: 'brightness(0.85)',
+            }}
+          />
+        </h2>
+        <p style={{ maxWidth: '650px', margin: '0 auto', fontSize: '1.1rem', lineHeight: 1.5, color: '#ccc' }}>
+          We’ve built a custom-trained AI model that recognizes your hand gestures with incredible precision. 
+          After thorough training and fine-tuning, our AI achieves 99% accuracy in understanding your commands 
+          to control Spotify. This means faster, smoother, and more reliable music control — all without touching 
+          your device. Experience the future of hands-on music interaction, powered by cutting-edge technology designed 
+          just for you.
+        </p>
+      </section>
+
+      {/* Download Section */}
+      <section id = "download"
+        style={{
+          padding: '60px 20px',
+          textAlign: 'center',
+          background: 'linear-gradient(135deg, #0d000d, #00110a, #0a0f0a, #000505)',
+
           color: 'white',
         }}
       >
@@ -129,7 +187,7 @@ function Home() {
           }} />
         </h2>
         <p style={{ maxWidth: '600px', margin: '0 auto 40px', fontSize: '1.1rem', color: '#bbb' }}>
-          Seamlessly control Spotify with hand gestures. Download the app for your platform and enjoy hands-free music control.
+          Seamlessly control Spotify with hand gestures. Download the app for your platform and enjoy touch-free music control.
         </p>
 
         <div
@@ -215,15 +273,13 @@ function Home() {
           </button>
         </div>
       </section>
-
+      
       {/* Features Section */}
-      <section
+      <section id = "features"
         style={{
           padding: '60px 20px',
           textAlign: 'center',
-          background: `
-            linear-gradient(135deg, #000000, #020402, #061b06)
-          `,
+          background: `linear-gradient(135deg, #000000, #000000, #061b06)`,
           color: 'white',
         }}
       >

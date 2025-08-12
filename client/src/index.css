@@ -35,6 +35,15 @@ button {
   z-index: 0;
 }
 
+.contact {
+  position: relative;
+  background: linear-gradient(135deg, #121212 0%, #1db954 100%);
+  color: white;
+  min-height: 100vh;
+  overflow: hidden;
+  z-index: 0;
+}
+
 /* Gloss overlay */
 .hero-section::before {
   content: '';
@@ -67,6 +76,8 @@ button {
     opacity: 0;
   }
 }
+
+
 
 button:hover {
   background-color: #17a44b;
