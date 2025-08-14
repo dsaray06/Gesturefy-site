@@ -1,16 +1,25 @@
 import { useEffect } from 'react';
+import pointRight from '../assets/gesture-icons/pointright.png';
+import openHand from '../assets/gesture-icons/openhand.png';
+import closedFist from '../assets/gesture-icons/closedfist.png';
+import pointLeft from '../assets/gesture-icons/pointleft.png';
+import thumbsUp from '../assets/gesture-icons/thumbsup.png';
+import pointUp from '../assets/gesture-icons/pointup.png';
+import pointDown from '../assets/gesture-icons/pointdown.png';
+import peaceSign from '../assets/gesture-icons/peacesign.png';
 
 function Home() {
   const features = [
-    { name: 'Point Right', action: 'Skip Song', image: 'https://via.placeholder.com/100' },
-    { name: 'Open Hand', action: 'Pause Music', image: 'https://via.placeholder.com/100' },
-    { name: 'Closed Fist', action: 'Play Music', image: 'https://via.placeholder.com/100' },
-    { name: 'Point Left', action: 'Previous Song', image: 'https://via.placeholder.com/100' },
-    { name: 'Thumbs Up', action: 'Like Song', image: 'https://via.placeholder.com/100' },
-    { name: 'Point Up', action: 'Volume Up', image: 'https://via.placeholder.com/100' },
-    { name: 'Point Down', action: 'Volume Down', image: 'https://via.placeholder.com/100' },
-    { name: 'Peace Sign', action: 'Stop Gesture Detection', image: 'https://via.placeholder.com/100' },
-  ];
+  { name: 'Point Right', action: 'Skip Song', image: pointRight },
+  { name: 'Open Hand', action: 'Pause Music', image: openHand },
+  { name: 'Closed Fist', action: 'Play Music', image: closedFist },
+  { name: 'Point Left', action: 'Previous Song', image: pointLeft },
+  { name: 'Thumbs Up', action: 'Like Song', image: thumbsUp },
+  { name: 'Point Up', action: 'Volume Up', image: pointUp },
+  { name: 'Point Down', action: 'Volume Down', image: pointDown },
+  { name: 'Peace Sign', action: 'Stop Gesture Detection', image: peaceSign },
+];
+
 
   useEffect(() => {
     if (window.location.hash) {
@@ -275,7 +284,7 @@ function Home() {
       </section>
       
       {/* Features Section */}
-      <section id = "features"
+      <section id="features"
         style={{
           padding: '60px 20px',
           textAlign: 'center',
@@ -295,14 +304,16 @@ function Home() {
             position: 'absolute',
             left: 0,
             bottom: -6,
-            height: '2px',            // slimmer height
+            height: '2px',
             width: '100%',
             borderRadius: '2px',
-            background: 'linear-gradient(90deg, #0a2a07, #14833b, #0a2a07)',  // darker green gradient
-            boxShadow: '0 0 6px 2px rgba(20, 131, 59, 0.4)',                // softer, darker glow
-            filter: 'brightness(0.85)', // slightly dimmer
+            background: 'linear-gradient(90deg, #0a2a07, #14833b, #0a2a07)',
+            boxShadow: '0 0 6px 2px rgba(20, 131, 59, 0.4)',
+            filter: 'brightness(0.85)',
           }} />
         </h2>
+
+        {/* Gesture grid */}
         <div
           style={{
             display: 'grid',
@@ -337,16 +348,59 @@ function Home() {
               <img
                 src={feat.image}
                 alt={feat.name}
-                style={{ width: '100px', height: '100px', objectFit: 'cover', marginBottom: '15px' }}
+                style={{ width: '100px', height: '100px', marginBottom: '15px', objectFit: 'contain' }}
               />
               <h3 style={{ fontSize: '1.2rem', marginBottom: '8px' }}>{feat.name}</h3>
               <p style={{ fontSize: '1rem', color: '#ccc' }}>{feat.action}</p>
             </div>
           ))}
         </div>
-      </section>
 
-      
+        {/* Extra features text */}
+        <div style={{ marginTop: '50px', maxWidth: '700px', marginLeft: 'auto', marginRight: 'auto' }}>
+          <p style={{ fontSize: '1.1rem', color: '#ccc' }}>
+            More than just gestures, Gesturefy also shows 
+            <span style={{ color: '#1db954', fontWeight: 'bold' }}> live song progress </span> 
+            and features 
+            <span className="color-shift" style={{ fontWeight: 'bold' }}> dynamic highlights </span> 
+            that adapt to the current track.
+          </p>
+          {/* Animated progress bar */}
+          <div style={{
+            marginTop: '15px',
+            height: '6px',
+            background: 'rgba(255,255,255,0.1)',
+            borderRadius: '3px',
+            overflow: 'hidden',
+          }}>
+            <div style={{
+              height: '100%',
+              width: '60%',
+              background: 'linear-gradient(90deg, #1db954, #14833b, #1db954)',
+              animation: 'progressAnim 4s infinite linear',
+            }} />
+          </div>
+        </div>
+
+        {/* Keyframes for animated bar */}
+        <style>
+          {`
+            @keyframes progressAnim {
+              0% { transform: translateX(-100%); }
+              100% { transform: translateX(100%); }
+            }
+            @keyframes colorShift {
+              0% { color: #00ff00; }       /* Neon green */
+              33% { color: #00ffff; }      /* Bright cyan */
+              66% { color: #adff2f; }      /* Yellow-green */
+              100% { color: #00ff00; }     /* Back to neon green */
+            }
+            .color-shift {
+              animation: colorShift 2s infinite ease-in-out;
+            }
+          `}
+        </style>
+      </section>
 
     </div>
   );

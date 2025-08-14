@@ -20,6 +20,16 @@ export default function Navbar() {
         >
           Home
         </Link>
+
+        <Link
+          to="/faq"
+          style={linkStyle}
+          onMouseEnter={e => (e.currentTarget.style.color = '#14833b')}
+          onMouseLeave={e => (e.currentTarget.style.color = '#fff')}
+        >
+          FAQ
+        </Link>
+
         <Link
           to="/contact"
           style={linkStyle}

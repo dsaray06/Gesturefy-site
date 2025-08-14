@@ -48,9 +48,10 @@ export default function Footer() {
           <h4 style={styles.heading}>Quick Links</h4>
           <ul style={styles.list}>
             <li><HoverLink href="/">Home</HoverLink></li>
-            <li><HoverLink href="/contact">Contact</HoverLink></li>
-            <li><HoverLink href="/#features">Features</HoverLink></li>
             <li><HoverLink href="/#download">Download</HoverLink></li>
+            <li><HoverLink href="/#features">Features</HoverLink></li>
+            <li><HoverLink href="/faq">FAQ</HoverLink></li>
+            <li><HoverLink href="/contact">Contact</HoverLink></li>
           </ul>
         </div>
 
@@ -66,7 +67,16 @@ export default function Footer() {
 
         <div style={styles.column}>
           <h4 style={styles.heading}>Contact</h4>
-          <p style={styles.text}>Email: support@gesturefy.com, or use contact form</p>
+          <p style={styles.text}>
+            Any questions? Email us at{" "}
+            <a 
+              href="mailto:support@gesturefy.com" 
+              style={{ color: '#1DB954', textDecoration: 'none' }}
+            >
+              support@gesturefy.com
+            </a>
+            , or use the contact form!
+          </p>
           <p style={styles.text}>Location: Dallas, TX</p>
         </div>
       </div>
