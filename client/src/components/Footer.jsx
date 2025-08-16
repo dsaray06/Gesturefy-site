@@ -70,10 +70,10 @@ export default function Footer() {
           <p style={styles.text}>
             Any questions? Email us at{" "}
             <a 
-              href="mailto:support@gesturefy.com" 
+              href="mailto:gesturefy.questions@gmail.com" 
               style={{ color: '#1DB954', textDecoration: 'none' }}
             >
-              support@gesturefy.com
+             gesturefy.questions@gmail.com 
             </a>
             , or use the contact form!
           </p>
