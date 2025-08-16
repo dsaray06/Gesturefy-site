@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { useState } from 'react';
 
-function HoverLink({ href, children }) {
+function HoverLink({ to, children }) {
   const [hover, setHover] = useState(false);
 
   const baseStyle = {
@@ -14,18 +15,18 @@ function HoverLink({ href, children }) {
   };
 
   const hoverStyle = {
-    color: '#aaaa'
+    color: '#aaaa',
   };
 
   return (
-    <a
-      href={href}
+    <Link
+      to={to}
       style={hover ? { ...baseStyle, ...hoverStyle } : baseStyle}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
       {children}
-    </a>
+    </Link>
   );
 }
 
@@ -47,13 +48,14 @@ export default function Footer() {
         <div style={styles.column}>
           <h4 style={styles.heading}>Quick Links</h4>
           <ul style={styles.list}>
-            <li><HoverLink href="/">Home</HoverLink></li>
-            <li><HoverLink href="/#download">Download</HoverLink></li>
-            <li><HoverLink href="/#features">Features</HoverLink></li>
-            <li><HoverLink href="/faq">FAQ</HoverLink></li>
-            <li><HoverLink href="/contact">Contact</HoverLink></li>
+            <li><HoverLink to="/">Home</HoverLink></li>
+            <li><HoverLink to="/#download">Download</HoverLink></li>
+            <li><HoverLink to="/#features">Features</HoverLink></li>
+            <li><HoverLink to="/faq">FAQ</HoverLink></li>
+            <li><HoverLink to="/contact">Contact</HoverLink></li>
           </ul>
         </div>
+
 
         <div style={styles.column}>
             <h4 style={styles.heading}>About Us</h4>
