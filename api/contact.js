@@ -22,9 +22,10 @@ export default async function handler(req, res) {
 
     await transporter.sendMail({
       from: email,
+      replyTo: email,
       to: process.env.EMAIL_USER,
       subject: subject,
-      text: `From: ${name} <${email}>\n\n${message}`,
+      text: `From: ${name}\nEmail: <${email}>\n\n${message}`,
     });
 
     res.status(200).json({ success: true });
