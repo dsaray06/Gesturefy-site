@@ -242,7 +242,18 @@ function Home() {
               alt="Windows"
               style={{ width: '24px', height: '24px' }} 
             />
-            Download for Windows
+            <a
+              style={{
+                color: 'white',
+                fontWeight: '600',
+                fontSize: '1.1rem'
+              }}
+              href="https://github.com/dsaray06/Gesturefy-site/releases/download/v1.0/Gesturefy_v1_Windows_Installer.exe"
+              download
+            >
+              Download for Windows
+            </a>
+            
           </button>
 
           {/* Mac Button */}
