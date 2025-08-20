@@ -292,6 +292,34 @@ function Home() {
             Download for Mac
           </button>
         </div>
+        <br />
+        <br />
+        <p style={{ maxWidth: '600px', margin: '0 auto 40px', fontSize: '0.75rem', color: '#bbb' }}>
+          <span style={{ fontSize: '1rem' }}>
+            PLEASE READ BEFORE DOWNLOADING:
+          </span>
+          <br />
+          As of May 15, 2025, Spotify only accepts businesses for quota extension requests, with one of the requirements 
+          being the app has a minimum of 250,000 monthly active users. Since the app utilizes the Spotify API, this means 
+          unless the app reaches this amount of users, we cannot move the app out of development mode. You can find more information on this at the{' '}
+          <a
+            href="https://developer.spotify.com/documentation/web-api/concepts/quota-modes"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ color: '#1DB954', textDecoration: 'underline' }}
+          >
+            Spotify Developer Documentation
+          </a> site.
+          <br />
+          <br />
+          Therefore, to use the app, your email address associated with the Spotify account you want to use with 
+          Gesturefy must be recorded in our authorized users. Please navigate to the "Contact" tab and send us a message with the email you want added as an authorized user.
+          Please note, only the Spotify account associated with this email will work with Gesturefy. 
+          A member of the team will add your email to the list, and then the app will work for you. 
+          Feel free to download the app and go through the instructions in the meantime, but you will not be 
+          able to log in and use gestures until your email address is added to the list. Thank you for your cooperation.
+        </p>
+
       </section>
       
       {/* Features Section */}
