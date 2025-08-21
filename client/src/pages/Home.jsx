@@ -289,7 +289,17 @@ function Home() {
               alt="Mac"
               style={{ width: '24px', height: '24px', filter: 'invert(1)' }} // invert to white
             />
-            Download for Mac
+            <a
+              style={{
+                color: 'white',
+                fontWeight: '600',
+                fontSize: '1.1rem'
+              }}
+              href="https://github.com/dsaray06/Gesturefy-site/releases/download/v1.0.0/Gesturefy_mac.dmg"
+              download
+            >
+              Download for Mac
+            </a>
           </button>
         </div>
         <br />
